@@ -1,8 +1,9 @@
 import React from 'react';
+import Recipe from '../components/Recipes';
 
 const App = () => {
   return (
-    <h2>Welcome to React</h2>
+    <Recipe />
   )
 }
 

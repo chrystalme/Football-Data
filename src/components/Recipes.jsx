@@ -2,20 +2,29 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Recipe = () => {
-  
-  const [recipe, setRecipe] = useState([]);
+
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('www.themealdb.com/api/json/v1/1/search.php?f=a')
+    axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(res => {
-        console.table(res)
+        console.log(res.data.categories)
+        setCategories(res.data);
       })
       .catch(err => {
         console.log(err)
       })
-  })
+  }, [])
   return(
-    <div></div>
+    <div>
+    {
+    Object.entries(categories).forEach(([key, value]) => {
+        value.forEach((item, i) => {
+    <h3>item.idCategory</h3>
+  });
+    });
+}
+    </div>
   )
 }
 
