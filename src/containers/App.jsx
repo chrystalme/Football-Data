@@ -1,10 +1,10 @@
 import React from 'react';
-import Recipe from '../components/Recipes';
+import Nav from '../components/Nav';
 
-const App = () => {
-  return (
-    <Recipe />
-  )
-}
+const App = () => (
+  <>
+    <Nav />
+  </>
+);
 
 export default App;
