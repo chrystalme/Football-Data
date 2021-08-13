@@ -1,11 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './containers/App';
+import rootReducer from './reducers';
+
+const initialState = {
+  recipe: [
+    {
+      name: 'Beans Budding',
+      ingredients: ['Beans', 'Onions', 'salt', 'vegetable oil'],
+    },
+  ],
+};
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
