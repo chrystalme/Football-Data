@@ -1,14 +1,18 @@
 import axios from 'axios';
-import { recipesCategory } from '../helpers/endpoints';
+import { getRecipe } from '.';
+import { recipeDetails } from '../helpers/endpoints';
 
-const fetchRecipes = () => (dispatch) => {
-  const [recipes, setRecipes] = useState({});
-  
-  useEffect(() => axios.get(recipesCategory)
-    .then((res) => res.json())
-    .then(res => setRecipes({recipes: res}))
-    .catch(() => set)
-    );
+const fetchRecipe = (id) => (dispatch) => {
+  const url = recipeDetails(id);
+
+  axios.get(url)
+    .then((res) => {
+      const { data } = res;
+      dispatch(getRecipe(data));
+    })
+    .catch((e) => {
+      throw e;
+    });
 };
 
-export default fetchRecipes;
+export default fetchRecipe;

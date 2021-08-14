@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import recipeReducer from './recipes';
+import { recipeReducer, selectedRecipeReducer } from './recipes';
 import filterReducer from './filter';
 
 const rootReducer = combineReducers({
-  recipes: recipeReducer,
+  recipe: recipeReducer,
+  selectedRecipe: selectedRecipeReducer,
   filter: filterReducer,
 });
 

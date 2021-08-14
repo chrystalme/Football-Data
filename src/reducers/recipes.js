@@ -5,13 +5,8 @@ const initialState = {
   recipe: {},
 };
 
-const recipeReducer = (state = initialState, action) => {
+export const recipeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_RECIPE:
-      return {
-        ...state,
-        recipe: action.payload,
-      };
     case GET_RECIPES:
       return {
         ...state,
@@ -23,4 +18,15 @@ const recipeReducer = (state = initialState, action) => {
   }
 };
 
-export default recipeReducer;
+export const selectedRecipeReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_RECIPE:
+      return {
+        ...state,
+        recipe: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
