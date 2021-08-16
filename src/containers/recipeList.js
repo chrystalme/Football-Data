@@ -50,7 +50,7 @@ import RecipeCategory from '../components/RecipeCategory';
 import * as endpoint from '../helpers/endpoints';
 
 const Recipe = () => {
-  const recipes = useSelector((state) => state.recipe);
+  const recipes = useSelector((state) => state.recipe.recipes);
   const dispatch = useDispatch();
   const fetchRecipe = async () => {
     const response = await axios
