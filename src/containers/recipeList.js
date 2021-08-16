@@ -2,6 +2,8 @@
 // import PropTypes from 'prop-types';
 // import { connect, useDispatch } from 'react-redux';
 // import { changeFilter, getRecipes } from '../actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import fetchRecipes from '../actions/fetchRecipes';
 // import Recipe from '../components/RecipeCategory';
 
@@ -43,14 +45,12 @@
 // export default ConnectedComponent;
 
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { getRecipes } from '../actions';
 import RecipeCategory from '../components/RecipeCategory';
 import * as endpoint from '../helpers/endpoints';
 
 const Recipe = () => {
-  const recipes = useSelector((state) => state.recipe.recipes);
+  const recipes = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
   const fetchRecipe = async () => {
     const response = await axios
@@ -66,14 +66,11 @@ const Recipe = () => {
   console.log(recipes.categories);
   return (
     <div>
-      This is recipeList
-      {recipes.categories
-        .map((category) => (
-          <RecipeCategory
-            key={category.idCategory}
-            category={category}
-          />
-        ))}
+      {
+       recipes.categories.map((category) => (
+         <RecipeCategory key={category.idCategory} category={category} />
+       ))
+     }
     </div>
   );
 };

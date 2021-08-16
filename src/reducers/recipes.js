@@ -1,17 +1,14 @@
 import { GET_RECIPES, GET_RECIPE } from '../actions';
 
 const initialState = {
-  recipes: [],
+  categories: [],
   recipe: {},
 };
 
 const recipeReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
-      return {
-        ...state,
-        recipes: action.payload,
-      };
+      return { ...state, recipes: action.payload };
     case GET_RECIPE:
       return {
         ...state,
@@ -22,12 +19,5 @@ const recipeReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-// export const selectedRecipeReducer = (state = {}, action) => {
-//   switch (action.type) {
-//     default:
-//       return state;
-//   }
-// };
 
 export default recipeReducer;
