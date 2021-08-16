@@ -5,21 +5,13 @@ const initialState = {
   recipe: {},
 };
 
-export const recipeReducer = (state = initialState, action) => {
+const recipeReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
       return {
         ...state,
         recipes: [...action.payload],
       };
-
-    default:
-      return state;
-  }
-};
-
-export const selectedRecipeReducer = (state = {}, action) => {
-  switch (action.type) {
     case GET_RECIPE:
       return {
         ...state,
@@ -30,3 +22,12 @@ export const selectedRecipeReducer = (state = {}, action) => {
       return state;
   }
 };
+
+// export const selectedRecipeReducer = (state = {}, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };
+
+export default recipeReducer;

@@ -1,5 +1,5 @@
 export const GET_RECIPE = 'GET_RECIPE';
-export const GET_RECIPES = 'GET_RECIPE';
+export const GET_RECIPES = 'GET_RECIPES';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
 
 export const getRecipes = (recipes) => ({

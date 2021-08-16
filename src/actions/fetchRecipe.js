@@ -9,6 +9,7 @@ const fetchRecipe = (id) => (dispatch) => {
     .then((res) => {
       const { data } = res;
       dispatch(getRecipe(data));
+      console.log(data);
     })
     .catch((e) => {
       throw e;
