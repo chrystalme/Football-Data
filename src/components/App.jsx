@@ -1,11 +1,11 @@
 import React from 'react';
 import Nav from './Nav';
-import Recipe from './Recipe';
+import RecipeList from '../containers/RecipeList';
 
 const App = () => (
   <>
     <Nav />
-    <Recipe />
+    <RecipeList />
   </>
 );
 
