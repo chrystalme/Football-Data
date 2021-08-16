@@ -7,3 +7,5 @@ export const searchByName = (meal) => `www.themealdb.com/api/json/v1/1/search.ph
 export const recipeByIngredient = (ingredient) => `www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
 
 export const apiKey = () => '765fd78f4fc8f00e79f89813b976ec9a';
+
+export const allStocks = () => `https://financialmodelingprep.com/api/v3/stock/list?apikey=${apiKey}&LIMIT=200`;

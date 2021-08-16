@@ -10,7 +10,7 @@ const recipeReducer = (state = initialState, action) => {
     case GET_RECIPES:
       return {
         ...state,
-        recipes: [...action.payload],
+        recipes: action.payload,
       };
     case GET_RECIPE:
       return {

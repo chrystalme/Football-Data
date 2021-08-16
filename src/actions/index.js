@@ -11,7 +11,7 @@ export const getRecipe = (recipe) => ({
   payload: recipe,
 });
 
-export const changeFilter = (name) => ({
+export const changeFilter = (id) => ({
   type: CHANGE_FILTER,
-  payload: name,
+  payload: id,
 });

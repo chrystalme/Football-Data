@@ -5,13 +5,12 @@ import { getRecipes } from '../actions';
 // import * as endpoint from '../helpers/endpoints';
 // import fetchRecipe from '../actions/fetchRecipe';
 
-const Recipe = () => {
-  const recipe = useSelector((state) => state.recipe.recipes);
+const recipe = () => {
+  const recipes = useSelector((state) => state.recipe.recipes);
   const dispatch = useDispatch();
-  const { ingredients, name } = recipe;
   const fetchRecipe = async () => {
     const response = await axios
-      .get('https://fakestoreapi.com/products')
+      .get('www.themealdb.com/api/json/v1/1/random.php')
       .catch((err) => {
         console.log(err);
       });
@@ -20,14 +19,12 @@ const Recipe = () => {
   useEffect(() => {
     fetchRecipe();
   }, []);
-  console.log(recipe);
+  console.log(recipes);
   return (
     <div>
       This is the component render
-      <h3>{name}</h3>
-      <p>{ingredients}</p>
     </div>
   );
 };
 
-export default Recipe;
+export default recipe;
