@@ -1,0 +1,9 @@
+@import '../index.css';
+
+.box {
+  @apply flex flex-col gap-2 items-center border border-gray-400 border-solid w-1/4
+}
+
+.title {
+  @apply font-semibold
+}

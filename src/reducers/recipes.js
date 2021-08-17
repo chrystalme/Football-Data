@@ -1,18 +1,18 @@
 import { GET_RECIPES, GET_RECIPE } from '../actions';
 
 const initialState = {
-  categories: [],
-  recipe: {},
+  stocks: [],
+  stock: {},
 };
 
-const recipeReducer = (state = initialState, action) => {
+const stockReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
-      return { ...state, recipes: action.payload };
+      return { ...state, stocks: action.payload };
     case GET_RECIPE:
       return {
         ...state,
-        recipe: action.payload,
+        stock: action.payload,
       };
 
     default:
@@ -20,4 +20,4 @@ const recipeReducer = (state = initialState, action) => {
   }
 };
 
-export default recipeReducer;
+export default stockReducer;

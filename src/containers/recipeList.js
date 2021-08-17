@@ -47,28 +47,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getRecipes } from '../actions';
 import RecipeCategory from '../components/RecipeCategory';
-import * as endpoint from '../helpers/endpoints';
+// import * as endpoint from '../helpers/endpoints';
+import recipelist from '../style/recipelist.module.css';
 
 const Recipe = () => {
-  const recipes = useSelector((state) => state.recipe.recipes);
+  const stocks = useSelector((state) => state.stocks.stocks);
   const dispatch = useDispatch();
   const fetchRecipe = async () => {
     const response = await axios
-      .get(endpoint.recipesCategory)
+      .get('https://financialmodelingprep.com/api/v3/stock-screener?marketCapMoreThan=1000000000&betaMoreThan=1&volumeMoreThan=10000&sector=Technology&exchange=NASDAQ&dividendMoreThan=0&limit=100&apikey=765fd78f4fc8f00e79f89813b976ec9a')
       .catch((err) => {
-        console.log(err);
+        throw err;
       });
     dispatch(getRecipes(response.data));
   };
   useEffect(() => {
     fetchRecipe();
   }, []);
-  console.log(recipes.categories);
   return (
-    <div>
+    <div className={recipelist.container}>
+
       {
-       recipes.categories.map((category) => (
-         <RecipeCategory key={category.idCategory} category={category} />
+       stocks.map((stock) => (
+         <RecipeCategory key={stock.symbol} stock={stock} />
        ))
      }
     </div>
