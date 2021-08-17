@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { userParams } from 'react-router-dom';
+import React from 'react';
 
- const RecipeDetails = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-};
+const RecipeDetails = () => (
+  <div>
+    Here is the details page
+  </div>
+);
 
 export default RecipeDetails;
-
