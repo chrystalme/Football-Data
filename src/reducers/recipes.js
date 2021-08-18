@@ -8,7 +8,7 @@ const initialState = {
 const stockReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
-      return { ...state, stocks: action.payload };
+      return { ...state, stocks: [...action.payload] };
     case GET_RECIPE:
       return {
         ...state,

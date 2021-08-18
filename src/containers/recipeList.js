@@ -59,7 +59,6 @@ const Recipe = () => {
       .catch((err) => {
         throw err;
       });
-    console.log(response.data);
     dispatch(getRecipes(response.data));
   };
   useEffect(() => {
@@ -67,7 +66,6 @@ const Recipe = () => {
   }, []);
   return (
     <div className={recipelist.container}>
-      Here is our stocks
       {
        stocks.map((stock) => (
          <RecipeCategory key={stock.symbol} stock={stock} />

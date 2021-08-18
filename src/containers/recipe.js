@@ -1,33 +1,20 @@
-// import React, { useEffect } from 'react';
-// import axios from 'axios';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { userParams } from 'react-router-dom';
-// import { getRecipe } from '../actions';
+// import React from 'react';
+
+// import { useSelector } from 'react-redux';
+// import { useParams } from 'react-router-dom';
 // import RecipeDetails from '../components/RecipeDetails';
 
-// export const Recipe = () => {
-//   const stock = useSelector((state) => state.stock);
-//   const { symbol } = userParams();
-//   const dispatch = useDispatch();
-//   console.log(symbol);
-//   const getStockDetails = async () => {
-//     const response = await axios
-//       .get(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=765fd78f4fc8f00e79f89813b976ec9a`)
-//       .catch((err) => {
-//         throw err;
-//       });
-//     console.log(stock);
-//     console.log(response.data);
-//     dispatch(getRecipe(response.data));
-//   };
-//   useEffect(() => {
-//     getStockDetails();
-//   }, {});
-//   return (
+// const Recipe = () =>
+// const { symbol } = useParams();
+// const stock = useSelector((state) => state.stockReducer.stocks
+//   .filter((stock) => stock.symbol === symbol));
+
+// console.log(stock);
+// console.log(symbol);
+
+//   (
 //     <div>
-//       <RecipeDetails />
+//       <RecipeDetails stocks={stock} />
 //     </div>
 //   );
-// };
-
 // export default Recipe;

@@ -6,9 +6,9 @@ export const getRecipes = (stocks) => ({
   type: GET_RECIPES,
   payload: stocks,
 });
-export const getRecipe = (symbol) => ({
+export const getRecipe = (stock) => ({
   type: GET_RECIPE,
-  payload: symbol,
+  payload: stock,
 });
 
 export const changeFilter = (id) => ({

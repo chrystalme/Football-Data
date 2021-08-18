@@ -14,7 +14,7 @@ const RecipeCategory = ({ stock }) => {
   } = stock;
 
   const handleClick = () => {
-    dispatch(getRecipe(symbol));
+    dispatch(getRecipe(stock));
   };
   return (
     <>
