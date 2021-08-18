@@ -3,8 +3,8 @@ import stockReducer from './recipes';
 import filterReducer from './filter';
 
 const rootReducer = combineReducers({
-  stocks: stockReducer,
-  filter: filterReducer,
+  stockReducer,
+  filterReducer,
 });
 
 export default rootReducer;
