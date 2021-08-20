@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import stockReducer from './recipes';
+import { leagueReducer, competitionReducer } from './recipes';
 import filterReducer from './filter';
 
 const rootReducer = combineReducers({
-  stockReducer,
+  leagueReducer,
+  competitionReducer,
   filterReducer,
 });
 

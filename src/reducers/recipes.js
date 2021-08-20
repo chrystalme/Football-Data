@@ -1,23 +1,19 @@
-import { GET_RECIPES, GET_RECIPE } from '../actions';
+// import { GET_ALL_COMPETITIONS, GET_LEAGUE } from '../actions';
 
-const initialState = {
-  stocks: [],
-  stock: {},
-};
+// export const leagueReducer = (state = [], action) => {
+//   switch (action.type) {
+//     case GET_LEAGUE:
+//       return { ...state, league: [...action.payload] };
+//     default:
+//       return state;
+//   }
+// };
 
-const stockReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case GET_RECIPES:
-      return { ...state, stocks: [...action.payload] };
-    case GET_RECIPE:
-      return {
-        ...state,
-        stock: action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
-
-export default stockReducer;
+// export const competitionReducer = (state = [], action) => {
+//   switch (action.type) {
+//     case GET_ALL_COMPETITIONS:
+//       return { ...state, { competitions: [...action.payload] };
+//     default:
+//       return state;
+//   }
+// };

@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getRecipe } from '../actions';
 
-const RecipeDetails = () => {
+const League = () => {
   const { symbol } = useParams();
   const stock = useSelector((state) => state.stockReducer.stocks
     .filter((stock) => stock.symbol === symbol));
@@ -14,14 +12,9 @@ const RecipeDetails = () => {
     image, ceo, description, companyName, mktCap, website,
   } = stock;
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const fetchStock = async () => {
-    const response = await axios
-      .get(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=765fd78f4fc8f00e79f89813b976ec9a`)
-      .catch((err) => {
-        throw err;
-      });
-    dispatch(getRecipe(response.data));
+
   };
   useEffect(() => {
     fetchStock();
@@ -37,8 +30,8 @@ const RecipeDetails = () => {
     </div>
   );
 };
-// RecipeDetails.propTypes = {
+// League.propTypes = {
 //   stock: PropTypes.objectOf.isRequired,
 // };
 
-export default RecipeDetails;
+export default League;

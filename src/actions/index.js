@@ -1,14 +1,14 @@
-export const GET_RECIPE = 'GET_RECIPE';
-export const GET_RECIPES = 'GET_RECIPES';
+export const GET_LEAGUE = 'GET_LEAGUE';
+export const GET_ALL_COMPETITIONS = 'GET_ALL_COMPETITIONS';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
 
-export const getRecipes = (stocks) => ({
-  type: GET_RECIPES,
-  payload: stocks,
+export const getAll = (competitions) => ({
+  type: GET_ALL_COMPETITIONS,
+  payload: competitions,
 });
-export const getRecipe = (stock) => ({
-  type: GET_RECIPE,
-  payload: stock,
+export const getLeague = (league) => ({
+  type: GET_LEAGUE,
+  payload: league,
 });
 
 export const changeFilter = (id) => ({
