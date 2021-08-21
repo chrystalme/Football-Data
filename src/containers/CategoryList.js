@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
 import { connect, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Category from '../components/Category';
 import { getAll } from '../actions';
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ competitions }) => {
   const dispatch = useDispatch();
-  const fetchCategories = async () => {
-    const response = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
+  const fetchCompetitions = async () => {
+    const response = await axios('https://api.football-data.org/v2/competitions/', {
       mode: 'cors',
-    }).catch((err) => console.log(err));
+      headers: {
+        'X-Auth-Token': '995e00e077394014bbba95a191625b10',
+      },
+    }).catch((err) => err);
     const data = await response.json();
     console.log(data);
     dispatch(getAll(data));
@@ -17,21 +21,21 @@ const CategoryList = ({ categories }) => {
   };
 
   useEffect(() => {
-    // if (categories === null || categories.categories.length < 4) {
-    //   fetchCategories();
+    // if (competitions.competitions === null || competitions.competitions.length < 4) {
+    //   fetchCompetitions();
     // } else {
-    //   dispatch(getAll(categories.categories));
+    //   dispatch(getAll(competitions.competitions));
     // }
-    fetchCategories();
+    fetchCompetitions();
   }, []);
-  console.log(categories.categories);
+  console.log(competitions);
   return (
 
     <div>
       Here my List appears
 
       {
-      categories.categories.map((category) => (
+      competitions.competitions.map((category) => (
         <Category key={category.idCategory} category={category} />
       ))
 }
@@ -41,16 +45,16 @@ const CategoryList = ({ categories }) => {
 };
 
 CategoryList.propTypes = {
-  categories: PropTypes.arrayOf(Object).isRequired,
+  competitions: PropTypes.arrayOf(Object).isRequired,
 //   // filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  categories: state.categories,
+  competitions: state.competitions,
 });
 // const mapDispatchToProps = (dispatch) => ({
 //   handleChangeFilter: (filter) => dispatch(changeFilter(filter.target.value)),
 // });
-const connecteComponent = connect(mapStateToProps, null)(CategoryList);
+const connectedComponent = connect(mapStateToProps, null)(CategoryList);
 
-export default connecteComponent;
+export default connectedComponent;

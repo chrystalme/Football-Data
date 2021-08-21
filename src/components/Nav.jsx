@@ -1,6 +1,6 @@
 import React from 'react';
 import nav from '../style/nav.module.css';
-import SearchStock from './StockFilter';
+import SearchStock from './LeagueFilter';
 
 const Nav = () => (
   <nav className={nav.nav}>

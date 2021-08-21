@@ -1,17 +1,17 @@
-import { GET_ALL_CATEGORIES, GET_MEAL } from '../actions';
+import { GET_ALL_COMPETITIONS, GET_LEAGUE } from '../actions';
 
-export const categoriesReducer = (state = [], action) => {
+export const competitionsReducer = (state = [], action) => {
   switch (action.type) {
-    case GET_ALL_CATEGORIES:
+    case GET_ALL_COMPETITIONS:
       return action.payload;
     default:
       return state;
   }
 };
 
-export const mealReducer = (state = [], action) => {
+export const leagueReducer = (state = [], action) => {
   switch (action.type) {
-    case GET_MEAL:
+    case GET_LEAGUE:
       return { ...state, meal: [action.payload] };
     default:
       return state;
