@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
+// import { Link } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 import allstocks from '../style/allstocks.module.css';
 
-const Competitions = ({ competition }) => {
-  const {
-    area, name, id, currentSeason,
-  } = competition;
-  return (
+// const competition = useSelector(((state) => state.competitionReducer.competitions));
+
+const Competitions = () => {
+  // const {
+  // area, name, id, currentSeason,
+  // } = competition;
+  (
     <>
-      <div className={allstocks.box} key={id}>
-        <Link to={`/competitions/${id}`}>
+      <div className={allstocks.box}>
+        Here is the list of competitions:
+        {/* <Link to={`/competitions/${id}`}>
           <div>
             <h2 className={allstocks.title}>
-              {' '}
               {area.name}
-              {' '}
             </h2>
             <h3>{name}</h3>
             <div>
@@ -27,13 +28,12 @@ const Competitions = ({ competition }) => {
               </ul>
             </div>
           </div>
-        </Link>
+        </Link> */}
       </div>
 
     </>
   );
 };
-
 Competitions.propTypes = {
   competition: PropTypes.objectOf(Array).isRequired,
 };
