@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import competitionReducer from './competitionSlice';
+import categoryReducer from './categorySlice';
 
 const store = configureStore({
   reducer: {
-    competitionReducer,
+    categoryReducer,
   },
 });
 

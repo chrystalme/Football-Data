@@ -1,37 +1,47 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
 const League = () => {
-  const { symbol } = useParams();
-  const stock = useSelector((state) => state.stockReducer.stocks
-    .filter((stock) => stock.symbol === symbol));
-
-  console.log(stock);
+  const { id } = useParams();
+  const league = useSelector((state) => state
+    .competitionReducer.competitions
+    .find((competition) => (competition.id === id)));
   const {
-    image, ceo, description, companyName, mktCap, website,
-  } = stock;
+    name, area, emblemUrl, currentSeason, seasons,
+  } = league;
 
-  // const dispatch = useDispatch();
-  const fetchStock = async () => {
-
-  };
-  useEffect(() => {
-    fetchStock();
-  }, []);
   return (
     <div>
-      <img src={image} alt={companyName} />
-      <h2>{companyName}</h2>
-      <h3>{ceo}</h3>
-      <h3>{mktCap}</h3>
-      <span>{website}</span>
-      <span>{description}</span>
+      <h2>League Details</h2>
+      <img src={emblemUrl} alt={name} />
+      <h2>{area.name}</h2>
+      <h3>{name}</h3>
+      <h3>{currentSeason.startDate}</h3>
+      <span>{currentSeason.endDate}</span>
+      <span>{currentSeason.currentMatchday}</span>
+      <p>Previous seasons winners</p>
+      <ul>
+        {seasons.map((season) => (
+          <li key={season.id}>
+            {season.endDate}
+            {' '}
+            |
+            {' '}
+            {season.winner.name}
+            {' '}
+            |
+            {' '}
+            {season.winner.crestUrl}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 // League.propTypes = {
-//   stock: PropTypes.objectOf.isRequired,
+//   league: PropTypes.objectOf.isRequired,
 // };
 
 export default League;

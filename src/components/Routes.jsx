@@ -3,7 +3,7 @@ import {
   BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import App from './App';
-import Competitions from './Competitions';
+import Competitions from './Competition';
 import League from './League';
 
 const Routes = () => (
@@ -11,7 +11,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/competition" component={Competitions} />
-      <Route path="/competition/:symbol" component={League} />
+      <Route path="/league/:id" component={League} />
     </Switch>
   </BrowserRouter>
 );
