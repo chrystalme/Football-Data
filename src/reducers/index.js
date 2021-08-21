@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import { leagueReducer, competitionReducer } from './recipes';
+import { categoriesReducer, mealReducer } from './recipes';
 import filterReducer from './filter';
 
 const rootReducer = combineReducers({
-  leagueReducer,
-  competitionReducer,
-  filterReducer,
+  categories: categoriesReducer,
+  meal: mealReducer,
+  filter: filterReducer,
 });
 
 export default rootReducer;

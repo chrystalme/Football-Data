@@ -13,7 +13,7 @@ const Category = ({ category }) => {
         Category:
         {strCategory}
       </h2>
-      <img style={{ width: 500, height: 40 }} alt={strCategory} src={strCategoryThumb === null ? 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' : strCategoryThumb} />
+      <img style={{ width: 500 }} alt={strCategory} src={strCategoryThumb === null ? 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' : strCategoryThumb} />
       <p>
         {strCategoryDescription}
       </p>
