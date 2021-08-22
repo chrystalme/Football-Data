@@ -1,11 +1,11 @@
 import React from 'react';
 import Nav from './Nav';
-import CategoryList from '../containers/CategoryList';
+import CompetitionList from '../containers/CompetitionList';
 
 const App = () => (
   <>
     <Nav />
-    <CategoryList />
+    <CompetitionList />
   </>
 );
 
