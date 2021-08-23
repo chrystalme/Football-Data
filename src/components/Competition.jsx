@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Competition = ({ competition }) => {
   const {
-    name, area, id, ensignUrl,
+    name, area, code, emblemUrl,
   } = competition;
   return (
 
-    <Link to={`league/${id}`} style={{ marginTop: 5 }}>
+    <Link to={`league/${code}`} style={{ marginTop: 5 }}>
       <h2>
         {name}
         {' '}
@@ -17,14 +17,20 @@ const Competition = ({ competition }) => {
         {' '}
         {/* | start date:
         {currentSeason.startDate}
-        {' '}
-        | end date:
+        {' '} */}
+        { /* | end date:
         {currentSeason.endDate}
         {' '}
         |
         {currentSeason.currentMatchday} */}
       </h2>
-      <img style={{ width: 500 }} alt={name} src={ensignUrl === null ? 'Nicehttps://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg' : ensignUrl} />
+      <img
+        src={emblemUrl === null
+          ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg'
+          : emblemUrl}
+        alt={name}
+        style={{ width: 100 }}
+      />
 
     </Link>
 
