@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getLeague } from '../actions';
 // import PropTypes from 'prop-types';
 
 const League = () => {
-  const { id } = useParams();
+  const { code } = useParams();
   const league = useSelector((state) => state
-    .competitionReducer.competitions
-    .find((competition) => (competition.id === id)));
+    .leagueReducer.league
+    .find((competition) => (competition.code === code)));
   const {
     name, area, emblemUrl, currentSeason, seasons,
   } = league;
+
+  useEffect(() => {
+    getLeague();
+  }, []);
 
   return (
     <div>

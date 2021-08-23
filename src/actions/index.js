@@ -6,9 +6,9 @@ export const getAll = (categories) => ({
   type: GET_ALL_COMPETITIONS,
   payload: categories,
 });
-export const getMeal = (meal) => ({
+export const getLeague = (league) => ({
   type: GET_LEAGUE,
-  payload: meal,
+  payload: league,
 });
 
 export const changeFilter = (id) => ({

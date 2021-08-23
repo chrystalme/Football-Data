@@ -15,14 +15,6 @@ const Competition = ({ competition }) => {
         |
         {area.name}
         {' '}
-        {/* | start date:
-        {currentSeason.startDate}
-        {' '} */}
-        { /* | end date:
-        {currentSeason.endDate}
-        {' '}
-        |
-        {currentSeason.currentMatchday} */}
       </h2>
       <img
         src={emblemUrl === null

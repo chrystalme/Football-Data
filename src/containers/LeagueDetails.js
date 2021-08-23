@@ -1,36 +1,40 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getLeague } from '../actions';
 // import PropTypes from 'prop-types';
 // import { setCompetitions } from '../store/competitionSlice';
-import League from '../components/League';
+// import League from '../components/League';
+import Nav from '../components/Nav';
 
 const LeagueDetails = () => {
-  const { id } = useParams();
-  const league = useSelector((state) => state.competitionReducer.competition);
-  // const dispatch = useDispatch();
-  const fetchCompetitions = async () => {
-    const response = await fetch(`http://api.football-data.org/v2/competitions/${id}`, {
+  const { code } = useParams();
+  const league = useSelector((state) => state.leagueReducer.league);
+  const dispatch = useDispatch();
+  const fetchLeague = async () => {
+    const response = await fetch(`http://api.football-data.org/v2/competitions/${code}/teams`, {
       mode: 'cors',
       headers: {
         'X-Auth-Token': '995e00e077394014bbba95a191625b10',
       },
-    }).catch((err) => console.log(err));
-    const data = await response.json();
-    // dispatch(setCompetitions(data));
-    return data;
+    }).catch((err) => err);
+    const { league } = response.data;
+    dispatch(getLeague(league));
+    console.log(league);
   };
 
   useEffect(() => {
-    fetchCompetitions();
+    fetchLeague();
   }, []);
-  console.log(id);
+  console.log(code);
   return (
 
     <div>
-      {league.map((league) => (
+      <Nav />
+      this is the league page
+      {/* {league.map((league) => (
         <League key={league.id} league={league} />
-      ))}
+      ))} */}
     </div>
 
   );
@@ -40,9 +44,9 @@ const LeagueDetails = () => {
 //   competitions: PropTypes.arrayOf(Object).isRequired,
 // };
 
-// const mapStateToProps = (state) => ({
-//   competitions: state.competitions,
-// });
-// const connecteComponent = connect(mapStateToProps, null)();
+const mapStateToProps = (state) => ({
+  league: state.league,
+});
+const connectedComponent = connect(mapStateToProps, null)(LeagueDetails);
 
-export default LeagueDetails;
+export default connectedComponent;
