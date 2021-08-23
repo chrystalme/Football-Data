@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useSelector, connect, useDispatch } from 'react-redux';
+import axios from 'axios';
+import { connect, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getLeague } from '../actions';
 // import PropTypes from 'prop-types';
@@ -9,24 +10,24 @@ import Nav from '../components/Nav';
 
 const LeagueDetails = () => {
   const { code } = useParams();
-  const league = useSelector((state) => state.leagueReducer.league);
+  // const league = useSelector((state) => state.leagueReducer.league);
   const dispatch = useDispatch();
   const fetchLeague = async () => {
-    const response = await fetch(`http://api.football-data.org/v2/competitions/${code}/teams`, {
+    const response = await axios(`https://api.football-data.org/v2/competitions/${code}/teams`, {
       mode: 'cors',
       headers: {
         'X-Auth-Token': '995e00e077394014bbba95a191625b10',
       },
     }).catch((err) => err);
     const { league } = response.data;
-    dispatch(getLeague(league));
+    dispatch(getLeague(response.data));
     console.log(league);
   };
 
   useEffect(() => {
     fetchLeague();
   }, []);
-  console.log(code);
+  // console.log(code);
   return (
 
     <div>

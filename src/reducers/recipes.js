@@ -12,7 +12,7 @@ export const competitionsReducer = (state = [], action) => {
 export const leagueReducer = (state = [], action) => {
   switch (action.type) {
     case GET_LEAGUE:
-      return { ...state, meal: [action.payload] };
+      return action.payload;
     default:
       return state;
   }

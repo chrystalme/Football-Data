@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import Competition from './Competition';
-import League from './League';
+import LeagueDetails from '../containers/LeagueDetails';
 import About from './About';
 
 const Routes = () => (
@@ -12,7 +12,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/competition" component={Competition} />
-      <Route path="/league/:id" component={League} />
+      <Route path="/league/:code" component={LeagueDetails} />
       <Route path="/about" component={About} />
     </Switch>
   </BrowserRouter>
