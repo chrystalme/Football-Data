@@ -1,41 +1,39 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getLeague } from '../actions';
 // import PropTypes from 'prop-types';
 // import { setCompetitions } from '../store/competitionSlice';
-// import League from '../components/League';
+import League from '../components/League';
 import Nav from '../components/Nav';
 
 const LeagueDetails = () => {
   const { code } = useParams();
-  // const league = useSelector((state) => state.leagueReducer.league);
+  const leagues = useSelector((state) => state.league);
   const dispatch = useDispatch();
   const fetchLeague = async () => {
-    const response = await axios(`https://api.football-data.org/v2/competitions/${code}/teams`, {
+    const response = await axios(`https://api.football-data.org/v2/competitions/${code}`, {
       mode: 'cors',
       headers: {
         'X-Auth-Token': '995e00e077394014bbba95a191625b10',
       },
     }).catch((err) => err);
-    const { league } = response.data;
     dispatch(getLeague(response.data));
-    console.log(league);
   };
 
   useEffect(() => {
     fetchLeague();
   }, []);
-  // console.log(code);
+  console.log(leagues);
   return (
 
     <div>
       <Nav />
       this is the league page
-      {/* {league.map((league) => (
+      {Object.entries(leagues).map((league) => (
         <League key={league.id} league={league} />
-      ))} */}
+      ))}
     </div>
 
   );

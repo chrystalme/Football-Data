@@ -1,52 +1,37 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getLeague } from '../actions';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const League = () => {
-  const { code } = useParams();
-  const league = useSelector((state) => state
-    .leagueReducer.league
-    .find((competition) => (competition.code === code)));
-  const {
-    name, area, emblemUrl, currentSeason, seasons,
-  } = league;
-
-  useEffect(() => {
-    getLeague();
-  }, []);
-
+const League = ({ league }) => {
+  const { name, area, seasons } = league;
   return (
     <div>
       <h2>League Details</h2>
-      <img src={emblemUrl} alt={name} />
-      <h2>{area.name}</h2>
-      <h3>{name}</h3>
-      <h3>{currentSeason.startDate}</h3>
-      <span>{currentSeason.endDate}</span>
-      <span>{currentSeason.currentMatchday}</span>
-      <p>Previous seasons winners</p>
-      <ul>
+      <h2>
+        {name}
+      </h2>
+      <h3>{area.name}</h3>
+      <div>
         {seasons.map((season) => (
-          <li key={season.id}>
-            {season.endDate}
-            {' '}
-            |
-            {' '}
-            {season.winner.name}
-            {' '}
-            |
-            {' '}
-            {season.winner.crestUrl}
-          </li>
+          <>
+            <img src={season.winner.name != null ? season.winner.crestUrl : ''} alt={season.winner.name} />
+            <h3 key={season.id}>
+              { season.winner.name }
+
+            </h3>
+          </>
         ))}
-      </ul>
+      </div>
+
     </div>
   );
 };
-// League.propTypes = {
-//   league: PropTypes.objectOf.isRequired,
-// };
+
+League.propTypes = {
+  league: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    seasons: PropTypes.arrayOf.isRequired,
+    area: PropTypes.objectOf.isRequired,
+  }).isRequired,
+};
 
 export default League;
