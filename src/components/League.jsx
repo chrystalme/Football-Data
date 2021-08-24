@@ -2,35 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const League = ({ league }) => {
-  const { name, area, seasons } = league;
+  const { competition, season } = league;
+  console.log(league);
+
   return (
     <div>
-      <h2>League Details</h2>
-      <h2>
-        {name}
-      </h2>
-      <h3>{area.name}</h3>
-      <div>
-        {seasons.map((season) => (
-          <>
-            <img src={season.winner.name != null ? season.winner.crestUrl : ''} alt={season.winner.name} />
-            <h3 key={season.id}>
-              { season.winner.name }
-
-            </h3>
-          </>
-        ))}
-      </div>
-
+      <h3>{competition.name}</h3>
+      <h3>{season.startDate}</h3>
     </div>
   );
 };
 
 League.propTypes = {
   league: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    seasons: PropTypes.arrayOf.isRequired,
-    area: PropTypes.objectOf.isRequired,
+    competition: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    season: PropTypes.shape({
+      startDate: PropTypes.string,
+    }),
   }).isRequired,
 };
 

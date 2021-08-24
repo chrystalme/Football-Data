@@ -10,10 +10,10 @@ import Nav from '../components/Nav';
 
 const LeagueDetails = () => {
   const { code } = useParams();
-  const leagues = useSelector((state) => state.league);
+  const league = useSelector((state) => state.league);
   const dispatch = useDispatch();
   const fetchLeague = async () => {
-    const response = await axios(`https://api.football-data.org/v2/competitions/${code}`, {
+    const response = await axios.get(`https://api.football-data.org/v2/competitions/${code}/teams`, {
       mode: 'cors',
       headers: {
         'X-Auth-Token': '995e00e077394014bbba95a191625b10',
@@ -23,17 +23,18 @@ const LeagueDetails = () => {
   };
 
   useEffect(() => {
-    fetchLeague();
+    if (code && code != null) fetchLeague();
   }, []);
-  console.log(leagues);
+
+  console.log(league);
   return (
 
     <div>
       <Nav />
-      this is the league page
-      {Object.entries(leagues).map((league) => (
-        <League key={league.id} league={league} />
-      ))}
+      <div>
+        <h2>League Details</h2>
+        {league.map((league) => (<League key={league.competition.id} league={league} />))}
+      </div>
     </div>
 
   );

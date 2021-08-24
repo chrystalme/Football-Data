@@ -5,6 +5,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { filtered } from '../helpers/utils';
 import Competition from '../components/Competition';
 import { getAll } from '../actions';
+import style from '../style/allCompetitions.module.css';
 
 const CompetitionList = () => {
   const competitions = useSelector((state) => state.competitions);
@@ -12,7 +13,7 @@ const CompetitionList = () => {
   const dispatch = useDispatch();
 
   const fetchCompetitions = async () => {
-    const response = await axios('https://api.football-data.org/v2/competitions/', {
+    const response = await axios.get('https://api.football-data.org/v2/competitions/', {
       mode: 'cors',
       headers: {
         'X-Auth-Token': '995e00e077394014bbba95a191625b10',
@@ -28,8 +29,7 @@ const CompetitionList = () => {
 
   return (
 
-    <div>
-      Here my List appears
+    <div className={style.container}>
       {
       // Object.entries(competitions)
       //   .filter(([key, value]) => key === CATEGORY.key && value === CATEGORY.value)

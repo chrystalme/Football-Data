@@ -8,7 +8,7 @@ import rootReducer from './reducers';
 
 const initialState = {
   competitions: [],
-  league: {},
+  league: [],
   filter: '',
 };
 
