@@ -3,8 +3,6 @@ import axios from 'axios';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getLeague } from '../actions';
-// import PropTypes from 'prop-types';
-// import { setCompetitions } from '../store/competitionSlice';
 import League from '../components/League';
 import Nav from '../components/Nav';
 
@@ -40,13 +38,10 @@ const LeagueDetails = () => {
   );
 };
 
-// LeagueDetails.propTypes = {
-//   competitions: PropTypes.arrayOf(Object).isRequired,
-// };
-
 const mapStateToProps = (state) => ({
   league: state.league,
 });
+
 const connectedComponent = connect(mapStateToProps, null)(LeagueDetails);
 
 export default connectedComponent;
