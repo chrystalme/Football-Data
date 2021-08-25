@@ -1,0 +1,8 @@
+@import '../index.css';
+
+.input {
+  @apply px-2 py-4 font-semibold text-gray-800 w-1/2
+}
+.container {
+  @apply mx-auto text-center
+}

@@ -7,6 +7,8 @@ import Competition from '../components/Competition';
 import { changeFilter, getAll } from '../actions';
 import LeagueFilter from '../components/LeagueFilter';
 import style from '../style/allCompetitions.module.css';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 const CompetitionList = ({ handleFilterChange }) => {
   const competitions = useSelector((state) => state.competitions);
@@ -28,9 +30,10 @@ const CompetitionList = ({ handleFilterChange }) => {
     fetchCompetitions();
     changeFilter();
   }, []);
-  console.log(filter);
+
   return (
     <>
+      <Nav />
       <LeagueFilter changeFilter={handleFilterChange} />
       <div className={style.container}>
         {
@@ -41,6 +44,7 @@ const CompetitionList = ({ handleFilterChange }) => {
           ))
   }
       </div>
+      <Footer />
     </>
   );
 };

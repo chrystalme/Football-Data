@@ -4,7 +4,6 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getLeague } from '../actions';
 import League from '../components/League';
-import Nav from '../components/Nav';
 
 const LeagueDetails = () => {
   const { code } = useParams();
@@ -28,7 +27,6 @@ const LeagueDetails = () => {
   return (
 
     <div>
-      <Nav />
       <div>
         {league.map((league) => (<League key={league.competition.id} league={league} />))}
       </div>

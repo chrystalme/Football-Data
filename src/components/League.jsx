@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../style/league.module.css';
+import Nav from './Nav';
+import Footer from './Footer';
 
 const League = ({ league }) => {
   const { competition, season, teams } = league;
@@ -8,6 +10,7 @@ const League = ({ league }) => {
 
   return (
     <div>
+      <Nav />
       <div className={style.header}>
         <h3>
           {competition.name}
@@ -40,6 +43,7 @@ const League = ({ league }) => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

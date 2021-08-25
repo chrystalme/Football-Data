@@ -11,11 +11,3 @@
 .title {
   @apply font-semibold
 }
-
-.loss {
-  @apply text-red-400
-}
-
-.gain {
-  @apply text-blue-400
-}

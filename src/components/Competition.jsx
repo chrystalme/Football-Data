@@ -8,22 +8,21 @@ const Competition = ({ competition }) => {
     name, area, code, emblemUrl,
   } = competition;
   return (
-
-    <Link to={`league/${code}`} style={{ marginTop: 5 }}>
-      <div className={all.box}>
-        <h2 className={all.title}>{name}</h2>
-        <h2 className={all.title}>{area.name}</h2>
-        <img
-          src={emblemUrl === null
-            ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg'
-            : emblemUrl}
-          alt={name}
-          style={{ width: 100 }}
-        />
-      </div>
-
-    </Link>
-
+    <>
+      <Link to={`league/${code}`} style={{ marginTop: 5 }}>
+        <div className={all.box}>
+          <h2 className={all.title}>{name}</h2>
+          <h2 className={all.title}>{area.name}</h2>
+          <img
+            src={emblemUrl === null
+              ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg'
+              : emblemUrl}
+            alt={name}
+            style={{ width: 100 }}
+          />
+        </div>
+      </Link>
+    </>
   );
 };
 Competition.propTypes = {
