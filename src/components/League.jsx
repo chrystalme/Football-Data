@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from '../style/league.module.css';
 
 const League = ({ league }) => {
   const { competition, season, teams } = league;
@@ -7,20 +8,36 @@ const League = ({ league }) => {
 
   return (
     <div>
-      <h3>
-        {competition.name}
-        {' '}
-        |
-        {' '}
-        {competition.area.name}
-      </h3>
-      <h3>{season.startDate}</h3>
-      <div>
+      <div className={style.header}>
+        <h3>
+          {competition.name}
+          {' '}
+          |
+          {' '}
+          {competition.area.name}
+        </h3>
+        <h3>
+          Current Match Day:
+          {' '}
+          {season.currentMatchday}
+        </h3>
+        <h3>
+          Start Date:
+          {' '}
+          {season.startDate}
+        </h3>
+        <h3>
+          End Date:
+          {' '}
+          {season.endDate}
+        </h3>
+      </div>
+      <div className={style.container}>
         {teams.map((team) => (
-          <>
-            <h5 key={team.id}>{team.name}</h5>
-            <img style={{ width: 100 }} src={team.crestUrl} alt={team.name} />
-          </>
+          <div className={style.item} key={team.id}>
+            <h5>{team.name}</h5>
+            <img style={{ width: 100 }} src={team.crestUrl === null ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg' : team.crestUrl} alt={team.name} />
+          </div>
         ))}
       </div>
     </div>
@@ -37,6 +54,8 @@ League.propTypes = {
     }).isRequired,
     season: PropTypes.shape({
       startDate: PropTypes.string,
+      endDate: PropTypes.string,
+      currentMatchday: PropTypes.string,
     }),
     teams: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,

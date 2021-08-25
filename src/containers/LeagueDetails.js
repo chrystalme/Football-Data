@@ -30,7 +30,6 @@ const LeagueDetails = () => {
     <div>
       <Nav />
       <div>
-        <h2>League Details</h2>
         {league.map((league) => (<League key={league.competition.id} league={league} />))}
       </div>
     </div>

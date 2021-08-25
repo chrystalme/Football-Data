@@ -11,7 +11,7 @@ export const getLeague = (league) => ({
   payload: league,
 });
 
-export const changeFilter = (id) => ({
+export const changeFilter = (filter) => ({
   type: CHANGE_FILTER,
-  payload: id,
+  payload: filter,
 });
