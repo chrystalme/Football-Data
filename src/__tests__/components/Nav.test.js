@@ -1,18 +1,37 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import Routes from '../../components/routes';
-
+import store from '../../store';
 import Nav from '../../components/nav';
 
 describe('Nav', () => {
-  xtest('nav component is rendered correctly', () => {
+  test('nav component is rendered correctly', () => {
     const component = render(
-      <Routes>
-        <Nav />
+      <Provider store={store}>
+        <Routes>
+          <Nav />
+          ,
+        </Routes>
         ,
-      </Routes>,
+      </Provider>,
+
     );
     expect(component).toMatchSnapshot();
+  });
+
+  test('nav has About', () => {
+    render(
+      <Provider store={store}>
+        <Routes>
+          <Nav />
+        </Routes>
+        ,
+      </Provider>,
+
+    );
+    const anchorElement = screen.getByText(/About/i);
+    expect(anchorElement).toBeInTheDocument();
   });
 });

@@ -1,24 +1,37 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { render, screen } from '@testing-library/react';
 import Routes from '../../components/Routes';
 import About from '../../components/About';
+import store from '../../store';
 
 describe('About', () => {
-  xtest('About component is rendered correctly', () => {
+  test('About component is rendered correctly', () => {
     const component = render(
-      <Routes>
-
-        <About />
+      <Provider store={store}>
+        <Routes>
+          <About />
+          ,
+        </Routes>
         ,
-      </Routes>,
+      </Provider>,
+
     );
     expect(component).toMatchSnapshot();
   });
 
-  xtest('Text match About page test', () => {
-    const { getByText } = render(<About />);
-    const text = getByText('Football');
-    expect(text).toBeInTheDocument();
+  test('About has Football', () => {
+    render(
+      <Provider store={store}>
+        <Routes>
+          <About />
+        </Routes>
+        ,
+      </Provider>,
+
+    );
+    const paragraphElement = screen.getByText(/FootBallData/i);
+    expect(paragraphElement).toBeInTheDocument();
   });
 });
