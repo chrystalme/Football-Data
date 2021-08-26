@@ -15,7 +15,6 @@ const About = () => (
         Only the goalkeeper is permitted to handle the ball and
         may do so only within the penalty area surrounding the goal.
         The team that scores more goals wins.
-
       </p>
       <p className={style}>
         Football is the world’s most popular ball game in numbers of participants
@@ -31,7 +30,6 @@ const About = () => (
         in 2010 a combined television audience of more than 26
         billion watched football’s premier tournament,
         the quadrennial month-long World Cup finals.
-
       </p>
       <p className={style}>
         History
