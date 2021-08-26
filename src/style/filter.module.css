@@ -1,8 +1,8 @@
 @import '../index.css';
 
 .input {
-  @apply px-2 py-4 font-semibold text-gray-800 w-1/2
+  @apply px-2 py-4 font-semibold rounded my-4 text-gray-800 w-1/2 border border-gray-100
 }
 .container {
-  @apply mx-auto text-center
+  @apply mx-auto text-center drop-shadow
 }
