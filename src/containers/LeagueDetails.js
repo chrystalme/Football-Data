@@ -22,8 +22,6 @@ const LeagueDetails = () => {
   useEffect(() => {
     if (code && code != null) fetchLeague();
   }, []);
-
-  console.log(league);
   return (
 
     <div>

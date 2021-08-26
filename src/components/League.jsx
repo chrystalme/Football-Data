@@ -6,7 +6,6 @@ import Footer from './Footer';
 
 const League = ({ league }) => {
   const { competition, season, teams } = league;
-  console.log(league);
 
   return (
     <div>
