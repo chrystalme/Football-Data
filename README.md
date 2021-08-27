@@ -1,4 +1,4 @@
-# Football Data 
+# Football Data -- Catalogue of Recipes Project
 
 This application is a single page application built using React.js. The application shows a collection of Football major events across the world. 
 
@@ -43,7 +43,7 @@ npm run test
 
 #### Live Link
 
-[Football Data]()
+[Football Data](https://football-data-plus.herokuapp.com/)
 
 ## Authors
 
@@ -65,7 +65,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- 
+- [Football Data](https://www.football-data.org/)
 - [Microverse](https://microverse.com)
 
 ## 📝 License
