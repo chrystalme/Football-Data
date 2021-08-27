@@ -1,7 +1,9 @@
 @import '../index.css';
 
 .nav {
-  @apply bg-red-50 h-20 px-8 flex justify-between items-center font-sans text-xl uppercase; }
+  @apply bg-red-50 h-20 px-8 flex justify-between items-center font-sans text-xl uppercase;
+}
 
 .right {
-  @apply flex gap-4; }
+  @apply flex gap-4;
+}
