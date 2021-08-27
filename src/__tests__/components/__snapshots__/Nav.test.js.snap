@@ -53,22 +53,41 @@ Object {
           </a>
         </div>
         <div>
-          <span>
-            Built by
+          <span
+            class="flex flex-row gap-3"
+          >
             <a
-              href="http://linkein.com"
+              href="https://github.com/chrystalme"
+              rel="noreferrer"
+              target="_blank"
             >
-              @afam_chrys
+              <i
+                class="fab fa-2x fa-github"
+              >
+                 
+              </i>
             </a>
             <a
-              href="http://linkein.com"
+              href="https://linkedin.com/in/afam-chrys"
+              rel="noreferrer"
+              target="_blank"
             >
-              @afam_chrys
+              <i
+                class="fab fa-2x fa-linkedin"
+              >
+                 
+              </i>
             </a>
             <a
-              href="http://linkein.com"
+              href="https://twitter.com/afam_ifeanyi"
+              rel="noreferrer"
+              target="_blank"
             >
-              @afam_chrys
+              <i
+                class="fab fa-2x fa-twitter"
+              >
+                 
+              </i>
             </a>
           </span>
         </div>
@@ -76,6 +95,7 @@ Object {
           <h5>
             Special Thanks to
             <a
+              class="font-bold"
               href="https://www.football-data.org/"
             >
                Football Data
@@ -135,22 +155,41 @@ Object {
         </a>
       </div>
       <div>
-        <span>
-          Built by
+        <span
+          class="flex flex-row gap-3"
+        >
           <a
-            href="http://linkein.com"
+            href="https://github.com/chrystalme"
+            rel="noreferrer"
+            target="_blank"
           >
-            @afam_chrys
+            <i
+              class="fab fa-2x fa-github"
+            >
+               
+            </i>
           </a>
           <a
-            href="http://linkein.com"
+            href="https://linkedin.com/in/afam-chrys"
+            rel="noreferrer"
+            target="_blank"
           >
-            @afam_chrys
+            <i
+              class="fab fa-2x fa-linkedin"
+            >
+               
+            </i>
           </a>
           <a
-            href="http://linkein.com"
+            href="https://twitter.com/afam_ifeanyi"
+            rel="noreferrer"
+            target="_blank"
           >
-            @afam_chrys
+            <i
+              class="fab fa-2x fa-twitter"
+            >
+               
+            </i>
           </a>
         </span>
       </div>
@@ -158,6 +197,7 @@ Object {
         <h5>
           Special Thanks to
           <a
+            class="font-bold"
             href="https://www.football-data.org/"
           >
              Football Data
