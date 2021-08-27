@@ -1,5 +1,4 @@
 @import '../index.css';
 
 .container {
-  @apply flex flex-row flex-wrap gap-4 mx-auto w-11/12 mt-2 justify-center
-}
+  @apply flex flex-row flex-wrap gap-4 mx-auto w-11/12 mt-2 justify-center; }

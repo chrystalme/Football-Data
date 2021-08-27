@@ -1,13 +1,10 @@
 @import '../index.css';
 
-.container{
-  @apply sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 grid gap-2
-}
+.container {
+  @apply sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 grid gap-2; }
 
 .item {
-  @apply mx-auto flex flex-col justify-center items-center shadow drop-shadow h-full p-4 w-full
-}
+  @apply mx-auto flex flex-col justify-center items-center shadow drop-shadow h-full p-4 w-full; }
 
 .header {
-  @apply flex flex-row justify-center gap-4 my-8
-}
+  @apply flex flex-row justify-center gap-4 my-8; }

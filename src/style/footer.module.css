@@ -1,5 +1,4 @@
 @import '../index.css';
 
 .container {
-  @apply bg-gray-100 flex md:flex-row lg:flex-row justify-between items-center py-8 px-2 sm:flex-col
-}
+  @apply bg-gray-100 flex md:flex-row lg:flex-row justify-between items-center py-8 px-2 sm:flex-col; }
