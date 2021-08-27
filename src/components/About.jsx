@@ -6,7 +6,7 @@ import style from '../style/about.module.css';
 const About = () => (
   <>
     <Nav />
-    <div>
+    <div className={style.container}>
       <p className={style}>
         Football, also called association football or soccer,
         game in which two teams of 11 players, using any part

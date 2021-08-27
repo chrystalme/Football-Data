@@ -10,7 +10,7 @@ This application is a single page application built using React.js. The applicat
 - Routers
 - Hooks
 - Testing reducers and react components
-- React-toolkit
+- Redux-toolkit
 - PropTypes Validation
 
 ## Built With
@@ -25,7 +25,7 @@ This application is a single page application built using React.js. The applicat
 #### Project Setup
 create a local copy 
 ```
-$ git clone https://github.com/chrystalme/math-magician.git
+$ git clone https://github.com/chrystalme/Football-Data.git
 ```
 install dependencies
 ```
@@ -43,7 +43,7 @@ npm run test
 
 #### Live Link
 
-[Calculator](https://math-magician-calc.herokuapp.com/)
+[Football Data]()
 
 ## Authors
 
@@ -57,7 +57,7 @@ npm run test
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/chrystalme/math-magician/issues).
+Feel free to check the [issues page](https://github.com/chrystalme/Football-Data/issues).
 
 ## Show your support
 
@@ -65,6 +65,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- 
 - [Microverse](https://microverse.com)
 
 ## 📝 License

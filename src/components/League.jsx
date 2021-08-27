@@ -58,7 +58,7 @@ League.propTypes = {
     season: PropTypes.shape({
       startDate: PropTypes.string,
       endDate: PropTypes.string,
-      currentMatchday: PropTypes.string,
+      currentMatchday: PropTypes.number,
     }),
     teams: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
