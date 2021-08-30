@@ -1,0 +1,9 @@
+@import '../index.css';
+
+.container {
+  @apply mb-8;
+}
+
+p {
+  @apply px-16 pt-8 mx-auto w-full text-justify;
+}
