@@ -13,6 +13,7 @@ const Routes = () => (
       <Route exact path="/" component={App} />
       <Route path="/competition" component={Competition} />
       <Route path="/league/:code" component={LeagueDetails} />
+      <Route path="/team/:tla" component={LeagueDetails} />
       <Route path="/about" component={About} />
     </Switch>
   </BrowserRouter>

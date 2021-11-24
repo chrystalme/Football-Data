@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from '../style/league.module.css';
 import Nav from './Nav';
@@ -37,8 +38,10 @@ const League = ({ league }) => {
       <div className={style.container}>
         {teams.map((team) => (
           <div className={style.item} key={team.id}>
-            <h5>{team.name}</h5>
-            <img style={{ width: 100 }} src={team.crestUrl === null ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg' : team.crestUrl} alt={team.name} />
+            <Link to={`team/${team.tla}`}>
+              <h5>{team.name}</h5>
+              <img style={{ width: 100 }} src={team.crestUrl === null ? 'https://static6.depositphotos.com/1007347/574/v/600/depositphotos_5749760-stock-illustration-football.jpg' : team.crestUrl} alt={team.name} />
+            </Link>
           </div>
         ))}
       </div>

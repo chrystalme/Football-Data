@@ -1,4 +1,5 @@
 export const GET_LEAGUE = 'GET_LEAGUE';
+export const GET_TEAM = 'GET_TEAM';
 export const GET_ALL_COMPETITIONS = 'GET_ALL_COMPETITIONS';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
 
@@ -9,6 +10,11 @@ export const getAll = (categories) => ({
 export const getLeague = (league) => ({
   type: GET_LEAGUE,
   payload: league,
+});
+
+export const getTeam = (team) => ({
+  type: GET_TEAM,
+  payload: team,
 });
 
 export const changeFilter = (filter) => ({
