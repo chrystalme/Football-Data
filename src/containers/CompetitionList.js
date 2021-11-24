@@ -14,12 +14,14 @@ const CompetitionList = ({ handleFilterChange }) => {
   const dispatch = useDispatch();
 
   const fetchCompetitions = async () => {
-    const response = await axios.get('https://api.football-data.org/v2/competitions/', {
-      mode: 'cors',
-      headers: {
-        'X-Auth-Token': '995e00e077394014bbba95a191625b10',
-      },
-    }).catch((err) => err);
+    const response = await axios
+      .get('https://api.football-data.org/v2/competitions/', {
+        mode: 'cors',
+        headers: {
+          'X-Auth-Token': '995e00e077394014bbba95a191625b10',
+        },
+      })
+      .catch((err) => err);
     const { competitions } = response.data;
     dispatch(getAll(competitions));
   };
@@ -33,13 +35,13 @@ const CompetitionList = ({ handleFilterChange }) => {
     <>
       <LeagueFilter changeFilter={handleFilterChange} />
       <div className={style.container}>
-        {
-        filtered(competitions)
-          .filter((competition) => (filter === '' ? filtered(competitions) : competition.name.toLowerCase().includes(filter.toLowerCase())))
+        {filtered(competitions)
+          .filter((competition) => (filter === ''
+            ? filtered(competitions)
+            : competition.name.toLowerCase().includes(filter.toLowerCase())))
           .map((competition) => (
             <Competition key={competition.id} competition={competition} />
-          ))
-  }
+          ))}
       </div>
     </>
   );
