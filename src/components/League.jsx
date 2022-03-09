@@ -11,11 +11,13 @@ const League = ({ league }) => {
     <div>
 
       <div className={style.header}>
-        <h3>
-          {competition.name}
-          &brvbar;
-          {competition.area.name}
-        </h3>
+        <Link to={`${competition.id}/standings`}>
+          <h3>
+            {competition.name}
+            &brvbar;
+            {competition.area.name}
+          </h3>
+        </Link>
         <h3>
           Current Match Day:
           {' '}
@@ -35,7 +37,7 @@ const League = ({ league }) => {
       <div className={style.container}>
         {teams.map((team) => (
           <div className={style.item} key={team.id}>
-            <Link to={`team/${team.tla}`}>
+            <Link to={`${team.id}`}>
               <h5>{team.name}</h5>
               <img
                 style={{ width: 100 }}
@@ -59,6 +61,7 @@ League.propTypes = {
   league: PropTypes.shape({
     competition: PropTypes.shape({
       name: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       area: PropTypes.shape({
         name: PropTypes.string.isRequired,
       }),
