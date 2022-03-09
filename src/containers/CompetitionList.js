@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,6 +10,8 @@ import style from '../style/allCompetitions.module.css';
 
 const CompetitionList = ({ handleFilterChange }) => {
   const competitions = useSelector((state) => state.competitions);
+  const [isLoading, setIsLoading] = useState(true);
+  // const [isError, setIsError] = useState(null);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
@@ -20,8 +22,8 @@ const CompetitionList = ({ handleFilterChange }) => {
         headers: {
           'X-Auth-Token': '995e00e077394014bbba95a191625b10',
         },
-      })
-      .catch((err) => err);
+      }).catch((err) => err);
+    setIsLoading(false);
     const { competitions } = response.data;
     dispatch(getAll(competitions));
   };
@@ -34,6 +36,7 @@ const CompetitionList = ({ handleFilterChange }) => {
   return (
     <>
       <LeagueFilter changeFilter={handleFilterChange} />
+      {isLoading && <p className="text-center m-auto">Loading...</p>}
       <div className={style.container}>
         {filtered(competitions)
           .filter((competition) => (filter === ''
